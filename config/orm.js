@@ -11,7 +11,7 @@ const orm = {
     },
 
     insertOne: function(burger_name){
-        let query = "INSERT INTO burger (burger_name, devoured) VALUES (?, false)";
+        let query = "INSERT INTO burgers (burger_name, devoured) VALUES (?, false)";
         connection.query(query, burger_name, function(err, res){
             if (err) throw err;
             console.log(res);
@@ -30,3 +30,5 @@ const orm = {
     }
 
 }
+
+module.exports = orm;
