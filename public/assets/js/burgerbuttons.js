@@ -16,14 +16,30 @@ $(function() {
         }).then(
         function() {
             console.log("Order up!");
+            location.reload();
         }
         );
     });
-    
 
-    $("#linktest").on("click", function(event){
+    $(".eat-burger").on("click", function(event){
         event.preventDefault();
-        console.log("JS file has loaded properly.")
+        let id = $(this).attr("data-id");
+        console.log(id)
+
+        let burgerEaten = {
+            devoured: 1
+        }
+
+        $.ajax("/api/burgers/" + id, {
+            type: "PUT",
+            data: burgerEaten
+        }).then(
+            function() {
+                console.log("Burger eaten!")
+                location.reload();
+            }
+        );
     });
+    
 
 });

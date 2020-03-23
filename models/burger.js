@@ -12,6 +12,12 @@ let burger = {
         orm.insertOne(burger_name, function(res){
             callback(res);
         });
+    },
+
+    devourBurger: function (id, boolean, callback) {
+        orm.updateOne(id, boolean, function(res){
+            callback(res);
+        })
     }
 
 }

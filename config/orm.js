@@ -19,9 +19,9 @@ const orm = {
         console.log("inserting a burger!");
     },
 
-    updateOne: function(burger_name, boolean, callback){
+    updateOne: function(id, boolean, callback){
         let query = "UPDATE burgers SET ? WHERE ?";
-        let update = [{devoured: boolean}, {burger_name: burger_name}]
+        let update = [{devoured: boolean}, {id: id}]
         connection.query(query, update, function(err, res){
                 if (err) throw err;
                 callback(res);
