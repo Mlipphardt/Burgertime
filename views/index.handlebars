@@ -1,7 +1,35 @@
-<h1>Create Da Burgers... Eat Da Burgers</h1>
 
-<ul>
-    {{#each burgers}}
-        <li>{{this.burger_name}}</li>
-    {{/each}}
-</ul>
+<div class = "container">
+
+    <div class = "row">
+        <div class = "col-md-8 mx-auto">
+            <h1>Create Da Burgers... Eat Da Burgers</h1>
+        </div>
+    </div>
+
+    <div class = "row mt-3">
+        <div class = "col-md-8 mx-auto">
+            <ul>
+                {{#each burgers}}
+                    <li>{{this.burger_name}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+    <div class = "row">
+
+        <div class = "col-md-4 mx-auto">
+        <h2 class = "text-center">Order up!</h2>
+            <form class="create-form">
+            <div class="form-group">
+                <label for="burger">Name your burger:</label>
+                <input type="text" id="burger" name="name">
+            </div>
+            <button type="submit">Add burger!</button>
+            </form>
+        </div>
+
+    </div>
+
+</div>

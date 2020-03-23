@@ -10,21 +10,21 @@ const orm = {
         })
     },
 
-    insertOne: function(burger_name){
+    insertOne: function(burger_name, callback){
         let query = "INSERT INTO burgers (burger_name, devoured) VALUES (?, false)";
         connection.query(query, burger_name, function(err, res){
             if (err) throw err;
-            console.log(res);
+            callback(res);
         })        
         console.log("inserting a burger!");
     },
 
-    updateOne: function(burger_name, boolean){
+    updateOne: function(burger_name, boolean, callback){
         let query = "UPDATE burgers SET ? WHERE ?";
         let update = [{devoured: boolean}, {burger_name: burger_name}]
         connection.query(query, update, function(err, res){
                 if (err) throw err;
-                console.log(res);
+                callback(res);
             })
         console.log("Updating burger status!");
     }
