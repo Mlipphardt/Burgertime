@@ -1,0 +1,12 @@
+body{
+    background-image: url(../img/Free-Burger-Vector-1.jpg);
+}
+
+.content{
+    background-color: coral;
+    padding: 33px;
+}
+
+#title{
+    background-color: coral;
+}

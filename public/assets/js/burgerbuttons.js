@@ -15,7 +15,6 @@ $(function() {
         data: newBurger
         }).then(
         function() {
-            console.log("Order up!");
             location.reload();
         }
         );
@@ -35,11 +34,30 @@ $(function() {
             data: burgerEaten
         }).then(
             function() {
-                console.log("Burger eaten!")
                 location.reload();
             }
         );
     });
+
+    $(".renew-burger").on("click", function(event){
+        event.preventDefault();
+        let id = $(this).attr("data-id");
+        console.log(id)
+
+        let burgerRenewed = {
+            devoured: 0
+        }
+
+        $.ajax("/api/burgers/" + id, {
+            type: "PUT",
+            data: burgerRenewed
+        }).then(
+            function() {
+                location.reload();
+            }
+        );
+    });
+    
     
 
 });

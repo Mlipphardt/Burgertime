@@ -2,31 +2,33 @@
 
     <div class = "row">
         <div class = "col-md-8 mx-auto">
-            <h1>Create Da Burgers... Eat Da Burgers</h1>
+            <h1 class = "text-center" id = "title">Create Da Burgers... Eat Da Burgers</h1>
         </div>
     </div>
 
     <div class = "row mt-3">
         <div class = "col-md-2"></div>
-        <div class = "col-md-4">
+        <div class = "col-md-3 content text-center">
             <h3>Hot and ready!</h3>
-            <ul>
                 {{#each burgers}}
                     {{#unless devoured}}
-                        <li>{{this.burger_name}}</li> <button class = "eat-burger" data-id={{this.id}}>Devour</button>
+                        <span>{{this.burger_name}}</span> </br>
+                        <button class = "eat-burger" data-id={{this.id}}>Devour</button>
+                        </br>
                     {{/unless}}
                 {{/each}}
-            </ul>
+
         </div>
-        <div class = "col-md-4">
-            <h3>In memory of flavor...</h3>
-            <ul>
+        <div class = "col-md-2"></div>
+        <div class = "col-md-3 content text-center">
+            <h3>Tasty memories</h3>
                 {{#each burgers}}
                     {{#if devoured}}
-                        <li>{{this.burger_name}}</li>
+                        <span>{{this.burger_name}}</span> </br>
+                        <button class = "renew-burger" data-id={{this.id}}>Re-Order</button>
+                        </br>
                     {{/if}}
                 {{/each}}
-            </ul>
         </div>
         <div class = "col-md-2"></div>
     </div>
@@ -36,7 +38,7 @@
     <div class = "row mt-5">
 
         <div class = "col-md-4 mx-auto">
-        <h2 class = "text-center">Order up!</h2>
+            <h2 class = "text-center">Order up!</h2>
             <form id = "create-burger-form">
             <div class="form-group">
                 <label for="burger">Name your burger:</label>
