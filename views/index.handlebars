@@ -2,13 +2,13 @@
 
     <div class = "row">
         <div class = "col-md-8 mx-auto">
-            <h1 class = "text-center" id = "title">Create Da Burgers... Eat Da Burgers</h1>
+            <h1 class = "text-center rounded p-3" id = "title">Create Da Burgers... Eat Da Burgers</h1>
         </div>
     </div>
 
     <div class = "row mt-3">
         <div class = "col-md-2"></div>
-        <div class = "col-md-3 content text-center">
+        <div class = "col-md-3 content text-center rounded">
             <h3>Hot and ready!</h3>
                 {{#each burgers}}
                     {{#unless devoured}}
@@ -20,7 +20,7 @@
 
         </div>
         <div class = "col-md-2"></div>
-        <div class = "col-md-3 content text-center">
+        <div class = "col-md-3 content text-center rounded">
             <h3>Tasty memories</h3>
                 {{#each burgers}}
                     {{#if devoured}}
@@ -37,8 +37,8 @@
 
     <div class = "row mt-5">
 
-        <div class = "col-md-4 mx-auto">
-            <h2 class = "text-center">Order up!</h2>
+        <div class = "col-md-4 mx-auto rounded text-center content">
+            <h2>Order up!</h2>
             <form id = "create-burger-form">
             <div class="form-group">
                 <label for="burger">Name your burger:</label>
