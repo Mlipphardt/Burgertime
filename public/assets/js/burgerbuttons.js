@@ -1,6 +1,6 @@
 $(function() {
-    /*
-    $(".create-burger-form").on("submit", function(event) {
+    
+    $("#create-burger-button").on("click", function(event) {
         event.preventDefault();
 
         var newBurger = {
@@ -8,17 +8,18 @@ $(function() {
         devoured: false
         };
 
+        console.log(newBurger);
+
         $.ajax("/api/burgers", {
         type: "POST",
         data: newBurger
         }).then(
         function() {
             console.log("Order up!");
-            location.reload();
         }
         );
     });
-    */
+    
 
     $("#linktest").on("click", function(event){
         event.preventDefault();
