@@ -2,22 +2,26 @@ $(function() {
     
     $("#create-burger-button").on("click", function(event) {
         event.preventDefault();
+        if ($("#burger").val().trim() === ""){
+            console.log("Error - no name provided.")
+        } else{ 
 
-        var newBurger = {
-        name: $("#burger").val().trim(),
-        devoured: false
-        };
+            var newBurger = {
+            name: $("#burger").val().trim(),
+            devoured: false
+            };
 
-        console.log(newBurger);
+            console.log(newBurger);
 
-        $.ajax("/api/burgers", {
-        type: "POST",
-        data: newBurger
-        }).then(
-        function() {
-            location.reload();
+            $.ajax("/api/burgers", {
+            type: "POST",
+            data: newBurger
+            }).then(
+            function() {
+                location.reload();
+            }
+            );
         }
-        );
     });
 
     $(".eat-burger").on("click", function(event){
