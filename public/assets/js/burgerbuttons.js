@@ -53,4 +53,16 @@ $(function () {
       location.reload();
     });
   });
+
+  $(".delete-burger-btn").on("click", function (event) {
+    event.preventDefault();
+    let id = $(this).attr("data-id");
+
+    $.ajax({
+      type: "DELETE",
+      url: "/api/burgers/" + id,
+    }).then(function () {
+      location.reload();
+    });
+  });
 });

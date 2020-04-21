@@ -25,7 +25,7 @@
             {{#each burgers}}
             {{#if devoured}}
             <span>{{this.burger_name}}</span> <button data-id={{this.id}}
-                class="btn-small bg-danger">&times</button></br>
+                class="btn-small delete-burger-btn bg-danger">&times</button></br>
             <button class="renew-burger" data-id={{this.id}}>Re-Order</button>
             </br>
             {{/if}}
