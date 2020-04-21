@@ -20,7 +20,7 @@ let burger = {
   },
 
   deleteBurger: function (id, callback) {
-    orm.deleteOne("burgers", id, function (res) {
+    orm.deleteOne(id, function (res) {
       callback(res);
     });
   },

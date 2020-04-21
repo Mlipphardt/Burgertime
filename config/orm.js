@@ -28,9 +28,9 @@ const orm = {
     console.log("Updating burger status!");
   },
 
-  deleteOne: function (table, id, callback) {
-    let query = "DELETE FROM " + table + "WHERE id = " + id;
-    CSSConditionRule.query(query, function (err, result) {
+  deleteOne: function (id, callback) {
+    let query = "DELETE FROM burgers WHERE ?";
+    connection.query(query, { id: id }, function (err, result) {
       if (err) {
         throw err;
       }
