@@ -1,50 +1,51 @@
-<div class = "container">
+<div class="container">
 
-    <div class = "row">
-        <div class = "col-md-8 mx-auto">
-            <h1 class = "text-center rounded p-3" id = "title">Create Da Burgers... Eat Da Burgers</h1>
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h1 class="text-center rounded p-3" id="title">Create Da Burgers... Eat Da Burgers</h1>
         </div>
     </div>
 
-    <div class = "row mt-3">
-        <div class = "col-md-2"></div>
-        <div class = "col-md-3 content text-center rounded">
+    <div class="row mt-3">
+        <div class="col-md-2"></div>
+        <div class="col-md-3 content text-center rounded">
             <h3>Hot and ready!</h3>
-                {{#each burgers}}
-                    {{#unless devoured}}
-                        <span>{{this.burger_name}}</span> </br>
-                        <button class = "eat-burger" data-id={{this.id}}>Devour</button>
-                        </br>
-                    {{/unless}}
-                {{/each}}
+            {{#each burgers}}
+            {{#unless devoured}}
+            <span>{{this.burger_name}}</span> </br>
+            <button class="eat-burger" data-id={{this.id}}>Devour</button>
+            </br>
+            {{/unless}}
+            {{/each}}
 
         </div>
-        <div class = "col-md-2"></div>
-        <div class = "col-md-3 content text-center rounded">
+        <div class="col-md-2"></div>
+        <div class="col-md-3 content text-center rounded">
             <h3>Tasty memories</h3>
-                {{#each burgers}}
-                    {{#if devoured}}
-                        <span>{{this.burger_name}}</span> </br>
-                        <button class = "renew-burger" data-id={{this.id}}>Re-Order</button>
-                        </br>
-                    {{/if}}
-                {{/each}}
+            {{#each burgers}}
+            {{#if devoured}}
+            <span>{{this.burger_name}}</span> <button data-id={{this.id}}
+                class="btn-small bg-danger">&times</button></br>
+            <button class="renew-burger" data-id={{this.id}}>Re-Order</button>
+            </br>
+            {{/if}}
+            {{/each}}
         </div>
-        <div class = "col-md-2"></div>
+        <div class="col-md-2"></div>
     </div>
 
 
 
-    <div class = "row mt-5">
+    <div class="row mt-5">
 
-        <div class = "col-md-4 mx-auto rounded text-center content">
+        <div class="col-md-4 mx-auto rounded text-center content">
             <h2>Order up!</h2>
-            <form id = "create-burger-form">
-            <div class="form-group">
-                <label for="burger">Name your burger:</label>
-                <input type="text" id="burger" name="name">
-            </div>
-            <button type="submit" id = "create-burger-button">Add burger!</button>
+            <form id="create-burger-form">
+                <div class="form-group">
+                    <label for="burger">Name your burger:</label>
+                    <input type="text" id="burger" name="name">
+                </div>
+                <button type="submit" id="create-burger-button">Add burger!</button>
             </form>
         </div>
 
